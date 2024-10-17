@@ -20,8 +20,10 @@ class Items:
 
 
     def get_total(self):
+        if self.category == 'electronics':
+            self.env_fee = 5
 
-        return self.price * self.qty
+        return (self.price + self.env_fee) * self.qty
 
     def get_tmost_prices(self):
 
