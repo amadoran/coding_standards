@@ -1,6 +1,11 @@
 class Items:
 
     def __init__(self, name, price, qty):
+        price_numeric_check = isinstance(price, (float, int))
+        qty_numeric_check = isinstance(qty, int)
+        print(price_numeric_check, qty_numeric_check)
+        if not price_numeric_check or not qty_numeric_check:
+            raise TypeError('Price or qty datatype missmatch')
 
         self.name = name
 
